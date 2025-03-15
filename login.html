@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - SalFlowers</title>
+    <link rel="stylesheet" href="/public/css/semantic.min.css">
+    <style>
+        .nim {
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            font-size: 14px;
+            color: #333;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 5px 10px;
+            border-radius: 5px;
+            z-index: 1000;
+        }
+        .login-section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .login-box {
+            width: 100%;
+            max-width: 400px;
+            padding: 20px;
+            background-color: #f4acb7;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="ui inverted menu">
+        <a href="Index.html" class="header item">Halo Florifilis!</a>
+        <div class="right menu">
+            <a href="Index.html" class="item">Home</a>
+            <a href="about.html" class="item">About</a>
+            <a href="contact.html" class="item">Contact</a>
+        </div>
+    </div>
+
+    <!-- Login Section -->
+    <div class="login-section">
+        <div class="login-box">
+            <h2 class="ui header">Login</h2>
+            <form class="ui form">
+                <div class="field">
+                    <label>Username</label>
+                    <input type="text" name="username" placeholder="Username" required>
+                </div>
+                <div class="field">
+                    <label>Password</label>
+                    <input type="password" name="password" placeholder="Password" required>
+                </div>
+                <button class="ui primary button" type="submit">Login</button>
+            </form>
+            <p class="text-center mt-3">Belum punya akun? <a href="register.html">Daftar di sini</a></p>
+        </div>
+    </div>
+
+    <div class="nim">Nama: Salwa Laelani NIM: 243307027</div>
+    <script src="/public/js/semantic.min.js"></script>
+</body>
+</html>

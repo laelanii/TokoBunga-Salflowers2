@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail Produk - SalFlowers</title>
+    <link rel="stylesheet" href="/public/css/semantic.min.css">
+    <style>
+        .nim {
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            font-size: 14px;
+            color: #333;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 5px 10px;
+            border-radius: 5px;
+            z-index: 1000;
+        }
+        .product-detail {
+            padding: 20px;
+            text-align: center;
+        }
+        .product-detail img {
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="ui inverted menu">
+        <a href="index.html" class="header item">Halo Florifilis!</a>
+        <div class="right menu">
+            <a href="index.html" class="item">Home</a>
+            <a href="about.html" class="item">About</a>
+            <a href="contact.html" class="item">Contact</a>
+        </div>
+    </div>
+
+    <!-- Product Detail Section -->
+    <div class="ui container product-detail">
+        <h2 class="ui header" id="productName">Nama Produk</h2>
+        <img id="productImage" src="" alt="Produk">
+        <p id="productDescription">Deskripsi produk.</p>
+        <p><strong>Harga:</strong> <span id="productPrice"></span></p>
+        <p><strong>Stok:</strong> <span id="productStock"></span></p>
+        <button class="ui primary button" onclick="orderProduct()">Pesan Sekarang</button>
+    </div>
+
+    <div class="nim">Nama: Salwa Laelani NIM: 243307027</div>
+    <script src="/public/js/semantic.min.js"></script>
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const productKey = urlParams.get('produk');
+        const products = {
+            Mawar: {
+                name: "Bunga Mawar Merah",
+                description: "Simbol cinta dan kasih sayang.",
+                price: "Rp 50.000 per tangkai",
+                stock: "10 tangkai",
+                image: "Mawar.jpeg"
+            },
+            Tulip: {
+                name: "Bunga Tulip",
+                description: "Tulip warna-warni yang cerah.",
+                price: "Rp 40.000 per tangkai",
+                stock: "15 tangkai",
+                image: "Tulip.jpeg"
+            },
+            Matahari: {
+                name: "Bunga Matahari",
+                description: "Bunga yang cerah dan energik.",
+                price: "Rp 35.000 per tangkai",
+                stock: "20 tangkai",
+                image: "matahari.jpeg"
+            },
+            "Buket Biasa": {
+                name: "Buket Biasa",
+                description: "Buket yang dibungkus dengan kertas wrap.",
+                price: "Rp 100.000",
+                stock: "5 buah",
+                image: "image/buket biasa.jpeg"
+            },
+            "Hand Tied": {
+                name: "Buket Hand Tied",
+                description: "Buket dengan bunga yang diikat bersama dengan pita.",
+                price: "Rp 300.000",
+                stock: "3 buah",
+                image: "Hand Tied.jpeg"
+            },
+            Biedermeier: {
+                name: "Buket Biedermeier",
+                description: "Buket dengan lapisan bunga yang disusun secara simetris.",
+                price: "Rp 250.000",
+                stock: "7 buah",
+                image: "Biedermeier.jpeg"
+            }
+        };
+        const product = products[productKey];
+        if (product) {
+            document.getElementById('productName').textContent = product.name;
+            document.getElementById('productDescription').textContent = product.description;
+            document.getElementById('productPrice').textContent = product.price;
+            document.getElementById('productStock').textContent = product.stock;
+            document.getElementById('productImage').src = product.image;
+        }
+        function orderProduct() {
+            const isLoggedIn = false;
+            if (isLoggedIn) {
+                alert("Pesanan berhasil!");
+            } else {
+                window.location.href = "login.html";
+            }
+        }
+    </script>
+</body>
+</html>
